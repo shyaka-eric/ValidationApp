@@ -1,0 +1,42 @@
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\kezaf\Desktop\ValidationApp\ValidationApp\settings.py changed, reloading.
+C:\Users\kezaf\Desktop\ValidationApp\ValidationApp\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\kezaf\Desktop\ValidationApp\ValidationApp\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\kezaf\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kezaf\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kezaf\Desktop\ValidationApp\myapp\views.py", line 62, in participant_form_view
+    VehicleFormSet = formset_factory(VehicleForm, extra=1, can_delete=True)
+                     ^^^^^^^^^^^^^^^
+NameError: name 'formset_factory' is not defined
+"GET / HTTP/1.1" 500 145
+C:\Users\kezaf\Desktop\ValidationApp\ValidationApp\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 17466
+Not Found: /static/myapp/style.css
+"GET /static/myapp/style.css HTTP/1.1" 404 179
+Not Found: /static/style/pics/car.jpg
+"GET /static/style/pics/car.jpg HTTP/1.1" 404 179
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 4158
+Not Found: /static/admin/css/login.css
+"GET /static/admin/css/login.css HTTP/1.1" 404 179
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 200 8093
+"POST /admin/logout/ HTTP/1.1" 200 3553
+"GET / HTTP/1.1" 200 17466
+Not Found: /static/myapp/style.css
+"GET /static/myapp/style.css HTTP/1.1" 404 179
+Not Found: /static/myapp/style.css
+"GET /static/myapp/style.css HTTP/1.1" 404 179
+Not Found: /static/style/pics/car.jpg
+"GET /static/style/pics/car.jpg HTTP/1.1" 404 179
+C:\Users\kezaf\Desktop\ValidationApp\ValidationApp\settings.py changed, reloading.

@@ -1,0 +1,141 @@
+
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation App</title>
+
+    <!-- Include necessary CSS or Bootstrap links here -->
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}">
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-image: url('/static/style/pics/car.jpg'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    
+
+    .vehicles-section{
+      display: none;
+      position:absolute;
+      top: 50%;
+      left: 50%;
+      padding: 20px 30px;
+      transform: translate(-50%, -50%);
+      width: 350px;
+      height: 80vh;
+      background-color: white;
+    }
+
+    .close{
+
+    }
+
+    form {
+        max-width: 600px; /* Adjusted width */
+        margin: 0 auto;
+        background-color: LightGray;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin-top: 30px; /* Adjusted to reduce the height of the form */
+        display: grid;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    h2 {
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    h3 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        padding-button: 5px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+    </style>
+</head>
+<body>
+    <h2>Participant Information Form</h2>
+    <form method="post" action="{% url 'participant_form' %}" class="needs-validation" novalidate>
+        {% csrf_token %}
+        {{ participant_form.as_p }}
+        <button type="button" class="btn btn-primary" id="addCarBtn">Add Vehicle</button>
+        
+          <div class="vehicles-section" id="vehicles-section">
+            <h3>Vehicles Information Form </h3>
+            {{ vehicle_formset.management_form }}
+            {% for form in vehicle_formset %}
+                {{ form.as_table }}
+            {% endfor %}
+            <button type="button" class="btn btn-primary btn-block" id="CloseCarBtn">Close to continue</button>
+            
+          </div>
+        
+
+        <button type="submit" class="btn btn-success">REGISTER</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        $("#addCarBtn").click(function() {
+          $(".vehicles-section").toggle();
+        })
+      })
+      $(document).ready(function() {
+        $("#CloseCarBtn").click(function() {
+          $(".vehicles-section").toggle();
+        })
+      })
+    </script>
+    <!-- Include necessary JavaScript or Bootstrap scripts here -->
+</body>
+</html>
